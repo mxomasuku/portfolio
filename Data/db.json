@@ -1,0 +1,32 @@
+{
+    "ProjectsDb": [
+        {
+            "id": 1,
+            "name": "Humanists Zim",
+            "description": "UI and Front-end Design for the Humanists Zimbabwe website",
+            "url": "www.humanists.zim",
+            "img": "/Images/pich.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Impacto Events",
+            "description": "UI and Front-end work for Impacto Events",
+            "url": "www.impactoevents.co.zw",
+            "img": "/Images/gear-5896295_1920.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Restaurant",
+            "description": "UI and Front-end Design for Little Lemon",
+            "url": "www.littlelemon.co.zw",
+            "img": "/Images/road-1715085_1920.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Open Source",
+            "description": "The one open source project I contribute to",
+            "url": "www.github/mxomasuku",
+            "img": "/Images/sculpture.jpg"
+        }
+    ]
+}
