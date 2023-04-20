@@ -1,13 +1,22 @@
 import React from 'react'
-import {SimpleGrid, Box, Container, Heading, List, ListItem} from '@chakra-ui/react'
+import {SimpleGrid, Box, Container, Heading, List, ListItem, Text} from '@chakra-ui/react'
 import {Link, Route, Routes} from 'react-router-dom'
+import Newsletter from '../Components/Newsletter'
 
 
 const Blog = () => {
   return (
     <>
 
-      <SimpleGrid as={'section'} minChildWidth={'500px'} rowGap={'10'}>
+    <Box px={32}>
+      <Container p={8} textAlign={'center'}>
+      <Heading py={'8'}>Blog?</Heading>
+      <Text>or compilation of ideas & an attempt to display competency</Text>
+      </Container>
+     
+    <Newsletter/>
+    
+    <SimpleGrid as={'section'} minChildWidth={'500px'} rowGap={'10'} mt={'8'}>
         <Box h={'400px'} bg={'ghostwhite'}>
 <Container>
   <Heading as={'h3'}> React & Related Frameworks</Heading>
@@ -48,6 +57,9 @@ const Blog = () => {
 
       </SimpleGrid>
 
+    </Box>
+
+     
 
       {/* <Routes>
         <Route path='/article' element={<ArticlePage/>}/>

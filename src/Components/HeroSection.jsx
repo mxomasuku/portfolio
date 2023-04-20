@@ -15,7 +15,7 @@ const HeroSection = () => (
 //     backgroundColor="#2A4365"
 //   >
     <VStack h={'80vh'} justifyContent={'center'}>
-    <Avatar size={'2xl'} name={'name'} src='https://i.pravatar.cc/150?img=7'/>
+    <Avatar size={'2xl'} name={'name'} src='../Images/avatar.jpg'/>
    <Heading as={'h5'} size={'md'}>
     {greeting}
    </Heading>

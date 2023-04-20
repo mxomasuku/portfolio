@@ -2,8 +2,9 @@ import {Box, Flex} from "@chakra-ui/react";
 
 const Footer = () => {
   return (
-    <Box backgroundColor="#18181b">
-      <footer>
+   
+    <Box backgroundColor="#18181b" marginTop={'auto'}>
+    
         <Flex
           margin="0 auto"
           px={12}
@@ -15,8 +16,9 @@ const Footer = () => {
         >
           <p>Mxo Masuku • © 2023</p>
         </Flex>
-      </footer>
+      
     </Box>
+  
   );
 };
 export default Footer;
