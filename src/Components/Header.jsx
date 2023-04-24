@@ -52,10 +52,11 @@ const Header = () => {
       <Flex justify={'space-between'} gap={4} display={{base:'none' , lg: 'block'}} >
           <HStack spacing={"30px"} pr={20} >
           <ListItem><NavLink to="/"> Home</NavLink></ListItem>
-            <ListItem><NavLink to ="/blog">Blog</NavLink></ListItem>
+            <ListItem><NavLink to ="/writing">Writing</NavLink></ListItem>
             <ListItem><NavLink to="/Contact">Contact Me</NavLink></ListItem>
             <ListItem><NavLink to="/Projects">Projects</NavLink></ListItem>
             <ListItem><NavLink to="/help">Help</NavLink></ListItem>
+            <ListItem><NavLink to="/about">About</NavLink></ListItem>
 
           </HStack>
         </Flex>

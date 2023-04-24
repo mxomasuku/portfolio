@@ -2,7 +2,7 @@ import {  Box, Button, Container } from '@chakra-ui/react'
 import React from 'react'
 import Work from '../Components/Work'
 import HeroSection from '../Components/HeroSection'
-import Blog from './Blog'
+import Blog from './Writing'
 import {Link} from 'react-router-dom'
 
 const Home = () => {

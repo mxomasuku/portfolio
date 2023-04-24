@@ -4,17 +4,12 @@ import { Avatar, Heading, VStack} from "@chakra-ui/react";
 const greeting = "Hello, I am Mxolisi!";
 const bio1 = "A frontend developer";
 const bio2 = "specialised in React";
+const bio3 = "Welcome to my dojo"
 
-// Implement the UI for the LandingSection component according to the instructions.
-// Use a combination of Avatar, Heading and VStack components.
+
 const HeroSection = () => (
-//   <FullScreenSection
-//     justifyContent="center"
-//     alignItems="center"
-//     isDarkBackground
-//     backgroundColor="#2A4365"
-//   >
-    <VStack h={'80vh'} justifyContent={'center'}>
+
+    <VStack h={'80vh'} justifyContent={'center'} backgroundImage={'../Images/scattered-forcefields.svg'}>
     <Avatar size={'2xl'} name={'name'} src='../Images/avatar.jpg'/>
    <Heading as={'h5'} size={'md'}>
     {greeting}
@@ -25,6 +20,7 @@ const HeroSection = () => (
   <Heading as={'h1'} size={'3xl'} noOfLines={2}>
    {bio2}
   </Heading>
+  <Heading as={'h3'} size={'sm'}>{bio3}</Heading>
     </VStack>
   
 //   </FullScreenSection>

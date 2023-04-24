@@ -8,17 +8,21 @@ import
   RouterProvider } from 'react-router-dom';
 
   //PAGES AND COMPONENTS
-import Blog from './Pages/Blog'
+
 import Contact from './Pages/Contact'
 import Home from './Pages/Home'
 import Projects from './Pages/Projects'
-import ArticlePage from './Pages/ArticlePage'
-import SeekHelp from './Pages/Help/SeekHelp';
-import FAQ from './Pages/Help/FAQ';
+import Post from './Pages/post'
+import SeekHelp from './Pages/Help/SeekHelp'
+import FAQ from './Pages/Help/FAQ'
+import About from './Pages/about';
+import NotFound from './Pages/NotFound';
+
 
 //Layouts
 import RootLayout from './layouts/RootLayout';
 import HelpLayout from './layouts/HelpLayout';
+import Writing from './Pages/Writing';
 
 
 
@@ -30,15 +34,19 @@ const router = createBrowserRouter(
     // <Route path = '/' element={<Root/>}>
     <Route path='/' element={<RootLayout/>}>
     <Route index element={<Home/>}/>
-    <Route path='/blog' element={<Blog/>}/>
+    <Route path='/writing' element={<Writing/>}/>
+    <Route path='/about' element={<About/>}/>
     <Route path='/Contact' element={<Contact/>}/>
     <Route path='/Projects' element={<Projects/>}/>
-    <Route path='/articles' element={<ArticlePage/>}/>
+    {/* <Route path='/post/:id' render={(props) => {<Post {...props} />}}/> */}
+    <Route path=':id' element={<Post/>}/>
     <Route path='help' element={<HelpLayout/>}>
-      <Route path='faq' element={<FAQ/>}/>
-      <Route path='seekhelp' element={<SeekHelp/>}/>
+    <Route path='faq' element={<FAQ/>}/>
+    <Route path='seekhelp' element={<SeekHelp/>}/>
+  
     
     </Route>
+    <Route path={'*'} element={<NotFound/>}/>
     </Route>
   )
 )
