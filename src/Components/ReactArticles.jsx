@@ -4,25 +4,28 @@ import { Link } from "react-router-dom"
 import ReactMarkdown from 'react-markdown'
 
 const ReactArticles = () => {
-    console.log(postList)
+    // console.log(postList)
     const excerptList = postList.map(post =>{
       return post.content.split(" ").slice(0, 25).join(" ")
     }
     )
-    console.log(excerptList)
+    // console.log(excerptList)
   return (
-    <Box h={'400px'} bg={'ghostwhite'}>
+    <Box>
     <Container>
-      <Heading as={'h3'}> React & Related Frameworks</Heading>
+      <Heading as={'h3'} p={8}> React & Related Frameworks</Heading>
       {postList.length && postList.map((post, i) =>{
         return (
         
              <Link key={post.id}>
-                <Box border={2} borderColor={"blackAlpha.300"}>
-                    <Heading as={'h4'} size={'sm'}>{post.title}</Heading>
+                <Box border={2} borderColor={"blackAlpha.300"} bg={'orange.400'}>
+                  <Box>
+                  <Heading as={'h4'} size={'sm'}>{post.title}</Heading>
                     <small>Published on {post.date} by {post.author}</small>
+                  </Box>
+                   
                     <small>{excerptList[i]}</small>
-                    <small><Button>Read More</Button></small>
+        
                     <hr/>
 
              </Box>

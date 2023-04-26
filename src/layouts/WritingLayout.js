@@ -5,30 +5,35 @@ import Newsletter from '../Components/Newsletter'
 import ReactArticles from '../Components/ReactArticles'
 import BubbleArticles from '../Components/BubbleArticles'
 import StuffArticles from '../Components/StuffArticles'
+import { Outlet } from 'react-router'
+import Writing from '../Pages/Writing/Writing'
 
 
-const Writing = () => {
+const WritingLayout = () => {
   return (
     <>
 
     <Box px={32}>
-      <Container p={8} textAlign={'center'}>
+      <Box textAlign={'center'}>
         <Heading py={'8'}>Blog?</Heading>
-        <Text>or compilation of ideas & an attempt to display competency</Text>
-      </Container>
+     
+      </Box>
   
-    <Newsletter/>
+    {/* <Newsletter/> */}
 
 <SimpleGrid as={'section'} minChildWidth={'500px'} rowGap={'10'} mt={'8'}>
-  <ReactArticles/>
+  {/* <ReactArticles/>
   <BubbleArticles/>
-  <StuffArticles/>
+  <StuffArticles/> */}
+  {/* <Writing/> */}
 </SimpleGrid>
 
     </Box>
+
+    <Outlet/>
 
     </>
   )
 }
 
-export default Writing
+export default WritingLayout

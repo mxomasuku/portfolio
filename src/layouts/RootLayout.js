@@ -1,6 +1,6 @@
-import React from 'react'
-import { Flex, Box, Spacer, HStack, List, ListItem } from '@chakra-ui/react'
-import { NavLink, Outlet } from 'react-router-dom'
+
+import { Box } from '@chakra-ui/react'
+import { Outlet } from 'react-router-dom'
 
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -15,7 +15,9 @@ const RootLayout = () => {
         <ToggleDarkMode/>
         <Header/>
         <main>
-            <Outlet/>
+          <Box >
+          <Outlet/>
+          </Box>
         </main>
         <footer className='footer'>
         <Footer/>

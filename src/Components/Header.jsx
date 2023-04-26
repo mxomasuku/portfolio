@@ -1,13 +1,14 @@
 import React from 'react'
 import { NavLink} from 'react-router-dom'
-import { Flex, Box, Spacer, HStack, List, ListItem } from '@chakra-ui/react'
+import { Flex, Box, Spacer, HStack, List, ListItem, Heading } from '@chakra-ui/react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faHome } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
   faMedium,
   faStackOverflow,
+ 
 } from "@fortawesome/free-brands-svg-icons";
 
 const socials = [
@@ -36,9 +37,15 @@ const socials = [
 
 const Header = () => {
   return (
+
     <nav>
+        
       <Flex as={"nav"} color={"whiteAlpha.800"} bg={"blackAlpha.900"} px={16} py={4} alignItems={'center'}>
-          <HStack spacing={8}>
+      <HStack display={{base: 'block',md: 'block', lg: 'none'}} justifyContent={'center'}>
+        <FontAwesomeIcon icon={faHome} size='2xl'/>
+        <Heading as={'h2'}>Contact Me</Heading>
+      </HStack>
+          <HStack spacing={8} display={{base:'none', lg: 'block'}}>
               {socials.map(({ url, icon }, index) => (
                 <a key={index} href={url}>
                   <FontAwesomeIcon icon={icon} size="lg" />
@@ -48,8 +55,10 @@ const Header = () => {
       <Spacer/>
      <Box>
 
-      <List textAlign={'center'}>
-      <Flex justify={'space-between'} gap={4} display={{base:'none' , lg: 'block'}} >
+ 
+
+      <List textAlign={'center'} display={{base:'none', lg: 'block'}}>
+      <Flex justify={'space-between'} gap={4}  >
           <HStack spacing={"30px"} pr={20} >
           <ListItem><NavLink to="/"> Home</NavLink></ListItem>
             <ListItem><NavLink to ="/writing">Writing</NavLink></ListItem>

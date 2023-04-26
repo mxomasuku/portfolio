@@ -9,18 +9,18 @@ const bio3 = "Welcome to my dojo"
 
 const HeroSection = () => (
 
-    <VStack h={'80vh'} justifyContent={'center'} backgroundImage={'../Images/scattered-forcefields.svg'}>
-    <Avatar size={'2xl'} name={'name'} src='../Images/avatar.jpg'/>
-   <Heading as={'h5'} size={'md'}>
+    <VStack h={{base: '50vh', md: '60vh', lg: '80vh'}} justifyContent={'center'} backgroundImage={{base: 'none', md: '../Images/scattered-forcefields.svg'}}>
+    <Avatar size={{ base:'md', md:'xl',lg:'2xl'}} name={'name'} src='../Images/avatar.jpg' border={'4px'} borderColor={'orange.700'}/>
+   <Heading as={'h5'} size={'md'} color={'ghostwhite'}>
     {greeting}
    </Heading>
-    <Heading as={'h1'} size={'3xl'} noOfLines={2}>
+    <Heading as={'h1'} size={{ base:'xl', md:'2xl',lg:'3xl'}} noOfLines={2} color={'ghostwhite'}>
    {bio1}
   </Heading>
-  <Heading as={'h1'} size={'3xl'} noOfLines={2}>
+  <Heading as={'h1'} size={{ base:'xl', md:'2xl',lg:'3xl'}} noOfLines={2} color={'ghostwhite'}>
    {bio2}
   </Heading>
-  <Heading as={'h3'} size={'sm'}>{bio3}</Heading>
+  <Heading as={'h3'} size={{ base:'sm', md:'sm',lg:'sm'}} color={'ghostwhite'}>{bio3}</Heading>
     </VStack>
   
 //   </FullScreenSection>
