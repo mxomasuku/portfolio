@@ -8,17 +8,21 @@ import
   RouterProvider } from 'react-router-dom';
 
   //PAGES AND COMPONENTS
-import Blog from './Pages/Blog'
+
 import Contact from './Pages/Contact'
 import Home from './Pages/Home'
 import Projects from './Pages/Projects'
 import ArticlePage from './Pages/ArticlePage'
 import SeekHelp from './Pages/Help/SeekHelp';
 import FAQ from './Pages/Help/FAQ';
+import Posts, {projectLoader} from './Pages/Blog/Posts';
 
 //Layouts
 import RootLayout from './layouts/RootLayout';
 import HelpLayout from './layouts/HelpLayout';
+import BlogLayout from './layouts/BlogLayout';
+import BlogError from './Pages/Blog/BlogError';
+import Blog , { postsLoader } from './Pages/Blog/Blog';
 
 
 
@@ -30,14 +34,22 @@ const router = createBrowserRouter(
     // <Route path = '/' element={<Root/>}>
     <Route path='/' element={<RootLayout/>}>
     <Route index element={<Home/>}/>
-    <Route path='/blog' element={<Blog/>}/>
+  
     <Route path='/Contact' element={<Contact/>}/>
     <Route path='/Projects' element={<Projects/>}/>
     <Route path='/articles' element={<ArticlePage/>}/>
     <Route path='help' element={<HelpLayout/>}>
       <Route path='faq' element={<FAQ/>}/>
       <Route path='seekhelp' element={<SeekHelp/>}/>
-    
+    </Route>
+    <Route path='blog' element={<BlogLayout/>}  >
+      <Route index element={<Blog/>} loader={postsLoader} errorElement={<BlogError/>}/>
+      <Route 
+      path=':id' 
+      element={<Posts/>}
+    loader={projectLoader}
+    errorElement={<BlogError/>}
+      />
     </Route>
     </Route>
   )
