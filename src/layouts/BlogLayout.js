@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, Outlet, useLoaderData } from 'react-router-dom'
 import {SimpleGrid, Box, Container, Heading, List, ListItem, Text, Button} from '@chakra-ui/react'
 import Posts from '../Pages/Blog/Posts'
-import { async } from 'q'
+
 
 const BlogLayout = () => {
+ 
   return (
     <div>
         
@@ -15,20 +16,15 @@ const BlogLayout = () => {
      
 <Link to='posts'><Button>To Posts</Button></Link>
     
-    <SimpleGrid as={'section'} minChildWidth={'500px'} rowGap={'10'} mt={'8'}>
 
-
-      </SimpleGrid>
 
     </Box>
 
-     
+     <Outlet/>
     </div>
   )
 }
 
 export default BlogLayout
 
-// export const postsLoader = async () => {
 
-// }

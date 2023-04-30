@@ -15,13 +15,14 @@ import Projects from './Pages/Projects'
 import ArticlePage from './Pages/ArticlePage'
 import SeekHelp from './Pages/Help/SeekHelp';
 import FAQ from './Pages/Help/FAQ';
-import Posts from './Pages/Blog/Posts';
+import Posts, {projectLoader} from './Pages/Blog/Posts';
 
 //Layouts
 import RootLayout from './layouts/RootLayout';
 import HelpLayout from './layouts/HelpLayout';
 import BlogLayout from './layouts/BlogLayout';
 import BlogError from './Pages/Blog/BlogError';
+import Blog , { postsLoader } from './Pages/Blog/Blog';
 
 
 
@@ -41,8 +42,14 @@ const router = createBrowserRouter(
       <Route path='faq' element={<FAQ/>}/>
       <Route path='seekhelp' element={<SeekHelp/>}/>
     </Route>
-    <Route path='blog' element={<BlogLayout/>}>
-      <Route path='posts' element={<Posts/>}/>
+    <Route path='blog' element={<BlogLayout/>}  >
+      <Route index element={<Blog/>} loader={postsLoader} errorElement={<BlogError/>}/>
+      <Route 
+      path=':id' 
+      element={<Posts/>}
+    loader={projectLoader}
+    errorElement={<BlogError/>}
+      />
     </Route>
     </Route>
   )

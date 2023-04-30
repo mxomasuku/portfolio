@@ -1,28 +1,28 @@
 import React from 'react'
 import {SimpleGrid, Box, Container, Heading, List, ListItem, Text} from '@chakra-ui/react'
-import {Link, Route, Routes} from 'react-router-dom'
+import {Link, Route, Routes, useLoaderData, useParams} from 'react-router-dom'
 import BlogLayout from '../../layouts/BlogLayout'
 
 
 
+
 const Posts = () => {
+  const {id} = useParams()
+  const project = useLoaderData()
+
+
   return (
 
 
 <>
-{/* <Box h={'400px'} >
+<Box h={'400px'} >
 
-  <Heading as={'h3'}> React & Related Frameworks</Heading>
+  {/* <Heading as={'h3'}>{project.id}</Heading> */}
 
-  <List>
-
-    <ListItem>Chakra UI as an Alternative for Bootstrap and Tailwind CSS</ListItem>
-    <ListItem>Discussing the new 'React-router-dom'</ListItem>
-    <ListItem>useContext: is it as scary as all that?</ListItem>
-    <ListItem>Formik & Chakra UI</ListItem>
-  </List>
-        </Box> */}
-        <h1>HELLO</h1>
+ 
+{id}
+        </Box>
+  
   </>
 
 
@@ -30,6 +30,17 @@ const Posts = () => {
 }
 
 export default Posts
+
+export const projectLoader = async ({params}) => {
+  const {id} = params
+  const res = await fetch('http://localhost:4000/ProjectsDb/' + id)
+  console.log(res)
+  if(!res.ok){
+    throw Error('Could not find the post you are looking for')
+  }
+  return res.json()
+  }
+
 
 
 
